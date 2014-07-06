@@ -29,7 +29,7 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        push: {
+        'push': {
             options: {
                 files: ['package.json', 'bower.json'],
                 updateConfigs: ['pkg', 'bower'],
@@ -50,10 +50,21 @@ module.exports = function(grunt) {
                 npmTag: 'Release %VERSION%',
                 gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d' // options to use with '$ git describe'
             }
+        },
+        'uglify': {
+            compress: {
+                src: 'src/input-password.js',
+                dest: 'dist/input-password.js',
+                options: {
+                    compress: true,
+                    preserveComments: false
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-gh-pages');
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-push-release');
