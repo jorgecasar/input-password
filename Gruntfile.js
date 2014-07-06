@@ -35,7 +35,7 @@ module.exports = function(grunt) {
                 updateConfigs: ['pkg', 'bower'],
                 push: {
                     releaseBranch: ['develop', 'master']
-                }
+                },
                 add: true,
                 addFiles: ['.'], // '.' for all files except ingored files in .gitignore
                 commit: true,
