@@ -1,0 +1,28 @@
+{
+	"name": "input-password",
+	"version": "0.0.1",
+	"authors": [
+		"Jorge del Casar <jorge.casar@gmail.com>"
+	],
+	"description": "The input password that you allways want to use in your apps with sign in process.",
+	"main": "dist/input-password.html",
+	"keywords": [
+		"polymer",
+		"web-components",
+		"input",
+		"password"
+	],
+	"license": "MIT",
+	"homepage": "https://jorgecasar.github.io/input-password/",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"app/bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"polymer": "Polymer/polymer#~0.3.1"
+	}
+}
