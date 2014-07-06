@@ -37,15 +37,15 @@ module.exports = function(grunt) {
                 add: true,
                 addFiles: ['.'], // '.' for all files except ingored files in .gitignore
                 commit: true,
-                commitMessage: 'Release v%VERSION%',
-                commitFiles: ['package.json'], // '-a' for all files
+                commitMessage: 'Release %VERSION%',
+                commitFiles: ['package.json', 'bower.json'], // '-a' for all files
                 createTag: true,
-                tagName: 'v%VERSION%',
+                tagName: '%VERSION%',
                 tagMessage: 'Version %VERSION%',
                 push: true,
                 pushTo: 'origin',
                 npm: false,
-                npmTag: 'Release v%VERSION%',
+                npmTag: 'Release %VERSION%',
                 gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d' // options to use with '$ git describe'
             }
         }
