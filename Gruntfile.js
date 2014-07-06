@@ -69,7 +69,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-push-release');
 
-    grunt.registerTask('build',  ['replace']);
+    grunt.registerTask('build',  ['replace', 'uglify']);
     grunt.registerTask('deploy', ['gh-pages']);
     grunt.registerTask('serve', ['connect']);
 
