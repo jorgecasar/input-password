@@ -32,8 +32,10 @@ module.exports = function(grunt) {
         push: {
             options: {
                 files: ['package.json', 'bower.json'],
-                updateConfigs: [],
-                releaseBranch: false,
+                updateConfigs: ['pkg', 'bower'],
+                push: {
+                    releaseBranch: ['develop', 'master']
+                }
                 add: true,
                 addFiles: ['.'], // '.' for all files except ingored files in .gitignore
                 commit: true,
@@ -44,7 +46,7 @@ module.exports = function(grunt) {
                 tagMessage: 'Version %VERSION%',
                 push: true,
                 pushTo: 'origin',
-                npm: false,
+                npm: true,
                 npmTag: 'Release %VERSION%',
                 gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d' // options to use with '$ git describe'
             }

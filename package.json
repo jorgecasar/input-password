@@ -1,6 +1,6 @@
 {
   "name": "input-password",
-  "version": "vv0.0.1-2-gf750-1-gcaca",
+  "version": "0.0.1-2-gf750-1-gcaca",
   "description": "The input password that you allways want to use in your apps with sign in process.",
   "main": "dist/input-password.html",
   "readme": "README.md",
