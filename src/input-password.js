@@ -1,4 +1,5 @@
 (function() {
+	var isReady = false;
 	Polymer('input-password', {
 		/* -- Attributes ------------------------------------------------ */
 		visible: false,
@@ -12,7 +13,10 @@
 			this.showText = this.getShowText();
 			this.hideText = this.getHideText();
 			this.visible = this.visible === true || this.visible === 'visible' || this.visible;
-			this.visibleChanged(this.show, this.show);
+			this.visibleChanged(this.visible, this.visible);
+		},
+		domReady: function(){
+			isReady = true;
 		},
 		visibleChanged: function(oldValue, newValue){
 			if( this.visible )
@@ -35,16 +39,24 @@
 			return this.toggleText.split('/')[1] || this.showText;
 		},
 		showValue: function() {
+			this.visible = true;
 			this.$[this.id].type = 'text';
 			this.classList.add(this.visibleClass);
 			this.$.visbilityButton.innerHTML = this.hideText;
-			this.fire('showValue');
+			if(isReady)
+			{
+				this.fire('showValue');
+			}
 		},
 		hideValue: function() {
+			this.visible = false;
 			this.$[this.id].type = 'password';
 			this.classList.remove(this.visibleClass);
 			this.$.visbilityButton.innerHTML = this.showText;
-			this.fire('hideValue');
+			if(isReady)
+			{
+				this.fire('hideValue');
+			}
 		},
 		toggle: function() {
 	  		this.visible = !this.visible;

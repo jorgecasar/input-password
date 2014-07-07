@@ -39,28 +39,29 @@
 		<p>The input password that you allways want to use in your apps with sign in process now is real with Web Components</p>
 
 		<p class="gh-btns pure-hidden-phone">
-             <iframe src="http://ghbtns.com/github-btn.html?user=jorgecasar&repo=input-password&type=watch&count=true&size=large"
+			<iframe src="http://ghbtns.com/github-btn.html?user=jorgecasar&repo=input-password&type=watch&count=true&size=large"
 allowtransparency="true" frameborder="0" scrolling="0" width="152" height="30"></iframe>
-             <iframe src="http://ghbtns.com/github-btn.html?user=jorgecasar&repo=input-password&type=fork&count=true&size=large"
+			<iframe src="http://ghbtns.com/github-btn.html?user=jorgecasar&repo=input-password&type=fork&count=true&size=large"
 allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"></iframe>
-         </p>
-
+		</p>
 		<article>
 			<h1>Basic</h1>
 			<div class="example_content">
 				<div class="example">
-					<input-password/>
+					<input-password></input-password>
 				</div>
 
 				<pre><code>&lt;input-password"&gt;&lt;/input-password&gt;</code></pre>
 			</div>
 		</article>
-
+	</section>
+	<section class="center">
+		<h2>Options</h2>
 		<article>
 			<h1>Name</h1>
 			<div class="example_content">
 				<div class="example">
-					<input-password name="password"/>
+					<input-password name="password"></input-password>
 				</div>
 
 				<pre><code>&lt;input-password name="password"&gt;&lt;/input-password&gt;</code></pre>
@@ -71,7 +72,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"><
 			<h1>Value</h1>
 			<div class="example_content">
 				<div class="example">
-					<input-password value="password"/>
+					<input-password value="password"></input-password>
 				</div>
 
 				<pre><code>&lt;input-password value="password"&gt;&lt;/input-password&gt;</code></pre>
@@ -82,7 +83,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"><
 			<h1>Visible</h1>
 			<div class="example_content">
 				<div class="example">
-					<input-password visible/>
+					<input-password visible></input-password>
 				</div>
 
 				<pre><code>&lt;input-password visible&gt;&lt;/input-password&gt;</code></pre>
@@ -90,10 +91,10 @@ allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"><
 		</article>
 
 		<article>
-			<h1>Toggle text</h1>
+			<h1>ToggleText</h1>
 			<div class="example_content">
 				<div class="example">
-					<input-password toggleText="Text/Password" />
+					<input-password toggleText="Text/Password"></input-password>
 				</div>
 
 				<pre><code>&lt;input-password toggleText="Text/Password"&gt;&lt;/input-password&gt;</code></pre>
@@ -101,21 +102,210 @@ allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"><
 		</article>
 
 		<article>
-			<h1>Visible class</h1>
+			<h1>VisibleClass</h1>
 			<div class="example_content">
 				<div class="example" id="exampleToggleClass">
-					<input-password visibleClass="secret"/>
+					<input-password visibleClass="secret"></input-password>
 				</div>
 
 				<pre><code>&lt;input-password visibleClass="secret"&gt;&lt;/input-password&gt;</code></pre>
 			</div>
 		</article>
+	</section>
+	<section class="center">
+		<h2>Methods</h2>
+		<article>
+			<h1>getShowText</h1>
+			<div class="example_content">
+				<div class="example">
+					<input-password id="getShowTextMethod" toggleText="Show/Hide"></input-password>
+					<button id="getShowText">Get Show Text</button>
+					<script>
+						document.getElementById('getShowText').addEventListener(
+							'click', function(addEventListener){
+								alert(document.getElementById('getShowTextMethod').getShowText());
+							}, false
+						);
+					</script>
+				</div>
 
+				<pre><code>&lt;input-password id="getShowTextMethod" toggleText="Show/Hide"&gt;&lt;/input-password&gt;
+&lt;button id="getShowText"&gt;Toggle Password&lt;/button&gt;
+&lt;script&gt;
+document.getElementById('getShowText').addEventListener(
+  'click', function(addEventListener){
+    alert(document.getElementById('getShowTextMethod').getShowText());
+  }, false
+);
+&lt;/script&gt;
+</code></pre>
+			</div>
+		</article>
+		<article>
+			<h1>getHideText</h1>
+			<div class="example_content">
+				<div class="example">
+					<input-password id="getHideTextMethod" toggleText="Show/Hide"></input-password>
+					<button id="getHideText">Get Hide Text</button>
+					<script>
+						document.getElementById('getHideText').addEventListener(
+							'click', function(addEventListener){
+								alert(document.getElementById('getHideTextMethod').getHideText());
+							}, false
+						);
+					</script>
+				</div>
+
+				<pre><code>&lt;input-password id="getHideTextMethod" toggleText="Show/Hide"&gt;&lt;/input-password&gt;
+&lt;button id="getHideText"&gt;Toggle Password&lt;/button&gt;
+&lt;script&gt;
+document.getElementById('getHideText').addEventListener(
+  'click', function(addEventListener){
+    alert(document.getElementById('getHideTextMethod').getHideText());
+  }, false
+);
+&lt;/script&gt;
+</code></pre>
+			</div>
+		</article>
+		<article>
+			<h1>showValue</h1>
+			<div class="example_content">
+				<div class="example">
+					<input-password id="showValueMethod" toggleText="Show/Hide"></input-password>
+					<button id="showValue">Show Value</button>
+					<script>
+						document.getElementById('showValue').addEventListener(
+							'click', function(addEventListener){
+								document.getElementById('showValueMethod').showValue();
+							}, false
+						);
+					</script>
+				</div>
+
+				<pre><code>&lt;input-password id="showValueMethod" toggleText="Show/Hide"&gt;&lt;/input-password&gt;
+&lt;button id="showValue"&gt;Toggle Password&lt;/button&gt;
+&lt;script&gt;
+document.getElementById('showValue').addEventListener(
+  'click', function(addEventListener){
+    alert(document.getElementById('showValueMethod').showValue());
+  }, false
+);
+&lt;/script&gt;
+</code></pre>
+			</div>
+		</article>
+		<article>
+			<h1>hideValue</h1>
+			<div class="example_content">
+				<div class="example">
+					<input-password id="hideValueMethod" toggleText="Show/Hide"></input-password>
+					<button id="hideValue">Show Value</button>
+					<script>
+						document.getElementById('hideValue').addEventListener(
+							'click', function(addEventListener){
+								document.getElementById('hideValueMethod').hideValue();
+							}, false
+						);
+					</script>
+				</div>
+
+				<pre><code>&lt;input-password id="hideValueMethod" toggleText="Show/Hide"&gt;&lt;/input-password&gt;
+&lt;button id="hideValue"&gt;Toggle Password&lt;/button&gt;
+&lt;script&gt;
+document.getElementById('hideValue').addEventListener(
+  'click', function(addEventListener){
+    alert(document.getElementById('hideValueMethod').hideValue());
+  }, false
+);
+&lt;/script&gt;
+</code></pre>
+			</div>
+		</article>
+		<article>
+			<h1>toggle</h1>
+			<div class="example_content">
+				<div class="example">
+					<input-password id="toggleMethod" toggleText="Show/Hide"></input-password>
+					<button id="toggleVisibility">Toggle Password</button>
+					<script>
+						document.getElementById('toggleVisibility').addEventListener(
+							'click', function(addEventListener){
+								document.getElementById('toggleMethod').toggle();
+							}, false
+						);
+					</script>
+				</div>
+
+				<pre><code>&lt; id="toggleMethod" toggleText="Show/Hide"&gt;&lt;/input-password&gt;
+&lt;script&gt;
+document.getElementById('toggleVisibility').addEventListener(
+   'click', function(addEventListener){
+      document.getElementById('toggleMethod').toggle();
+   }, false
+);
+&lt;/script&gt;
+</code></pre>
+			</div>
+		</article>
+	</section>
+	<section class="center">
+		<h2>Events</h2>
+		<article>
+			<h1>ShowValue</h1>
+			<div class="example_content">
+				<div class="example">
+					<input-password id="onShowEvent"></input-password>
+					<script>
+						document.getElementById('onShowEvent').addEventListener('showValue', function(){
+							alert('Value is shown');
+						}, false);
+					</script>
+				</div>
+
+				<pre><code>&lt;input-password id="onShowEvent"&gt;&lt;/input-password&gt;
+&lt;script&gt;
+document.getElementById('onShowEvent').addEventListener(
+   'showValue', function(){
+      alert('Value is shown');
+   }, false
+);
+&lt;/script&gt;
+</code></pre>
+			</div>
+		</article>
+
+		<article>
+			<h1>HideValue</h1>
+			<div class="example_content">
+				<div class="example">
+					<input-password id="onHideEvent"></input-password>
+					<script>
+						document.getElementById('onHideEvent').addEventListener('hideValue', function(event){
+							alert('Value is hidden');
+						}, false);
+					</script>
+				</div>
+
+				<pre><code>&lt;input-password id="onHideEvent"&gt;&lt;/input-password&gt;
+&lt;script&gt;
+document.getElementById('onHideEvent').addEventListener(
+   'hideValue', function(){
+      alert('Value is hidden');
+   }, false
+);
+&lt;/script&gt;
+</code></pre>
+			</div>
+		</article>
+	</section>
+	<section class="center">
+		<h2>Extras</h2>
 		<article>
 			<h1>Stylish input-pasword</h1>
 			<div class="example_content">
 				<div class="example">
-					<input-password id="stylish"/>
+					<input-password id="stylish"></input-password>
 				</div>
 
 				<pre><code>&lt;input-password id="stylish"&gt;&lt;/input-password&gt;</code></pre>
