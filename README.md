@@ -60,5 +60,5 @@ Method          | Parameters     | Returns            | Description
 
 Event         | Description
 ---           | ---
-`onHideValue` | Triggers when the password begun to be shown.
-`onHideValue` | Triggers when the password begun to be hidden.
+`onShowValue` | Triggers when the password is shown.
+`onHideValue` | Triggers when the password is hidden.
