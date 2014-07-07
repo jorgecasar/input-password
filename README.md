@@ -14,7 +14,7 @@ Install the component using [Bower](http://bower.io/):
 $ bower install input-password --save
 ```
 
-Or [download as ZIP](#).
+Or [download as ZIP](https://github.com/jorgecasar/input-password/archive/gh-pages.zip).
 
 ## Usage
 
