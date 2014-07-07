@@ -51,7 +51,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"><
 					<input-password></input-password>
 				</div>
 
-				<pre><code>&lt;input-password"&gt;&lt;/input-password&gt;</code></pre>
+				<pre><code>&lt;input-password&gt;&lt;/input-password&gt;</code></pre>
 			</div>
 		</article>
 	</section>
@@ -294,6 +294,56 @@ document.getElementById('onHideEvent').addEventListener(
       alert('Value is hidden');
    }, false
 );
+&lt;/script&gt;
+</code></pre>
+			</div>
+		</article>
+
+		<article>
+			<h1>Default events</h1>
+			<div class="example_content">
+				<div class="example">
+					<input-password id="defaultEvents"></input-password>
+					<script>
+						var inputEvents = [
+						// Mouse events
+						'mousedown', 'mouseup', 'click', 'mouseover', 'mouseout',
+						// Keyboard events
+						'keydown', 'keypress', 'keyup',
+						// Touch events
+						'touchstart', 'touchend', 'touchmove',
+						// Focus events
+						'focus', 'blur',
+						];
+						var inputPassword = document.getElementById('defaultEvents');
+						for(var i = inputEvents.length-1; i >= 0; i--)
+						{
+							inputPassword.addEventListener(inputEvents[i], function(event){
+								console.log( event.target.nodeName + ' received ' + event.type);
+							}, false);
+						}
+					</script>
+				</div>
+
+				<pre><code>&lt;input-password id="defaultEvents"&gt;&lt;/input-password&gt;
+&lt;script&gt;
+var inputEvents = [
+   // Mouse events
+   'mousedown', 'mouseup', 'click', 'mouseover', 'mouseout',
+   // Keyboard events
+   'keydown', 'keypress', 'keyup',
+   // Touch events
+   'touchstart', 'touchend', 'touchmove',
+   // Focus events
+   'focus', 'blur',
+];
+var inputPassword = document.getElementById('defaultEvents');
+for(var i = inputEvents.length-1; i >= 0; i--)
+{
+   inputPassword.addEventListener(inputEvents[i], function(event){
+      console.log( event.target + ' received ' + event.type);
+   }, false);
+}
 &lt;/script&gt;
 </code></pre>
 			</div>
