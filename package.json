@@ -16,6 +16,12 @@
   "bugs": {
     "url": "https://github.com/jorgecasar/input-password/issues"
   },
+  "keywords": [
+    "polymer",
+    "web-components",
+    "input",
+    "password"
+  ],
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-connect": "^0.8.0",
