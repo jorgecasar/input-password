@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         'push': {
             options: {
                 files: ['package.json', 'bower.json'],
-                updateConfigs: ['pkg', 'bower'],
+                updateConfigs: [],
                 push: {
                     releaseBranch: ['develop', 'master']
                 },
