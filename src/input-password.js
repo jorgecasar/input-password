@@ -28,9 +28,6 @@
 				this.hideValue();	
 			}
 		},
-		nameChanged: function(oldValue, newValue){
-		  	this.id = this.id || newValue;
-		},
 		/* -- Methods --------------------------------------------------- */
 		getShowText: function(){
 			return this.toggleText.split('/')[0];
@@ -40,7 +37,7 @@
 		},
 		showValue: function() {
 			this.visible = true;
-			this.$[this.id].type = 'text';
+			this.$.input.type = 'text';
 			this.classList.add(this.visibleClass);
 			this.$.visibilityButton.innerHTML = this.hideText;
 			if(isReady)
@@ -50,7 +47,7 @@
 		},
 		hideValue: function() {
 			this.visible = false;
-			this.$[this.id].type = 'password';
+			this.$.input.type = 'password';
 			this.classList.remove(this.visibleClass);
 			this.$.visibilityButton.innerHTML = this.showText;
 			if(isReady)
