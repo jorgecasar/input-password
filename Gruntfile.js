@@ -40,7 +40,7 @@ module.exports = function(grunt) {
                 addFiles: ['.'], // '.' for all files except ingored files in .gitignore
                 commit: true,
                 commitMessage: 'Release %VERSION%',
-                commitFiles: ['package.json', 'bower.json'], // '-a' for all files
+                commitFiles: ['-a'], // ['package.json', 'bower.json'], // '-a' for all files
                 createTag: true,
                 tagName: '%VERSION%',
                 tagMessage: 'Version %VERSION%',
