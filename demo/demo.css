@@ -74,32 +74,41 @@ pre {
 #exampleToggleClass input-password.secret:after {
 	content: "Hidden";
 }
-
-#stylish {
-	width:200px;
+#verticalDirection {
+	flex-direction: column;
+	width: 200px;
 }
-#stylish::shadow input, #stylish::shadow button {
-	margin:0;
-	border:1px solid #CCC;
-	outline: none;
-}
-#stylish::shadow input {
+#verticalDirection::shadow input {
 	padding:0.5em;
-	border-radius:4px 0 0 4px;
-	z-index:2;
+	border-radius:4px 4px 0 0;
 }
-#stylish::shadow button {
-	margin-left:-1px;
-	border-radius:0 4px 4px 0;
-	background:#F8F8F8;
-	z-index:1;
+#verticalDirection::shadow button {
+	border-radius:0 0 4px 4px;
+	margin: -1px 0 0;
 }
-#stylish::shadow button:hover {
-	cursor: pointer;
-	background: #F2F2F2; 
+
+#buttonInside {
+	display: inline-block;
+	width: 200px;
 }
-#stylish::shadow input:focus {
-	border-color: #66AFE9;
-	outline: 0;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(102, 175, 233, 0.6);
+#buttonInside::shadow input {
+	border-radius:4px;
+	z-index: 1;
+	width: 100%;
+	padding-right:2.6em;
+}
+#buttonInside::shadow button {
+	position:absolute;
+	right: 0.25em;
+	top: 0;
+	display:block;
+	width:2.4em;
+	height:2.4em;
+	padding: 0;
+	text-indent: -9999em;
+	border:0 none;
+	background:transparent url('./img/invisible.png') no-repeat center;
+}
+#buttonInside.visible::shadow button {
+	background-image: url('./img/visible.png');
 }
