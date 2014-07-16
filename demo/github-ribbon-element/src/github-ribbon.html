@@ -1,0 +1,47 @@
+<polymer-element name="github-ribbon" attributes="owner repo corner color">
+
+  <template>
+    <a href="https://github.com/{{owner}}/{{repo}}">
+      <img src="https://s3.amazonaws.com/github/ribbons/forkme_{{corner}}_{{urlColor}}.png" alt="{{alt}}">
+    </a>
+
+    <style>
+      img {
+        position : absolute;
+        top      : 0;
+        border   : 0;
+        left     : {{corner == 'left' ? '0' : 'auto'}};
+        right    : {{corner != 'left' ? '0' : 'auto'}};
+      }
+    </style>
+  </template>
+
+  <script type="text/javascript">
+    var colors = {
+      'red'      : 'red_aa0000',
+      'green'    : 'green_007200',
+      'darkblue' : 'darkblue_121621',
+      'orange'   : 'orange_ff7600',
+      'gray'     : 'gray_6d6d6d',
+      'white'    : 'white_ffffff'
+    };
+
+    Polymer('github-ribbon', {
+      user     : 'owner',
+      repo     : 'repo',
+      alt      : 'Fork me on GitHub',
+      corner   : 'right',
+      color    : 'green',
+
+      get urlColor() {
+        var urlColor = colors[this.color];
+
+        if (!urlColor)
+          throw Error('Invalid color ' + this.color);
+
+        return urlColor;
+      }
+    });
+  </script>
+
+</polymer-element>
