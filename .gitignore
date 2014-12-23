@@ -26,3 +26,4 @@ node_modules
 
 # Bower dependencies
 bower_components
+.DS_Store
