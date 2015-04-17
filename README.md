@@ -1,4 +1,4 @@
-[![Package Quality](http://npm.packagequality.com/badge/input-password.png)](http://packagequality.com/#?package=input-password)
+[![Package Quality](http://npm.packagequality.com/shield/input-password.png)](http://packagequality.com/#?package=input-password)
 [![Build Status](https://secure.travis-ci.org/jorgecasar/input-password.svg?branch=master)](http://travis-ci.org/jorgecasar/input-password)
 [![Dependency Status](https://david-dm.org/jorgecasar/input-password.svg?theme=shields.io)](https://david-dm.org/jorgecasar/input-password)
 [![devDependency Status](https://david-dm.org/jorgecasar/input-password/dev-status.svg?theme=shields.io)](https://david-dm.org/jorgecasar/input-password#info=devDependencies)
