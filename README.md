@@ -1,3 +1,5 @@
+[![Package Quality](http://npm.packagequality.com/badge/input-password.png)](http://packagequality.com/#?package=input-password)
+
 # &lt;input-password&gt;
 
 The input password with mobile features and possibility to see the password and more.
