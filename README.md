@@ -1,7 +1,7 @@
 [![Package Quality](http://npm.packagequality.com/badge/input-password.png)](http://packagequality.com/#?package=input-password)
-[![Build Status](https://secure.travis-ci.org/jorgecasar/karmacracy-javascript-api.svg?branch=master)](http://travis-ci.org/jorgecasar/karmacracy-javascript-api)
-[![Dependency Status](https://david-dm.org/jorgecasar/karmacracy-javascript-api.svg?theme=shields.io)](https://david-dm.org/jorgecasar/karmacracy-javascript-api)
-[![devDependency Status](https://david-dm.org/jorgecasar/karmacracy-javascript-api/dev-status.svg?theme=shields.io)](https://david-dm.org/jorgecasar/karmacracy-javascript-api#info=devDependencies)
+[![Build Status](https://secure.travis-ci.org/jorgecasar/input-password.svg?branch=master)](http://travis-ci.org/jorgecasar/input-password)
+[![Dependency Status](https://david-dm.org/jorgecasar/input-password.svg?theme=shields.io)](https://david-dm.org/jorgecasar/input-password)
+[![devDependency Status](https://david-dm.org/jorgecasar/input-password/dev-status.svg?theme=shields.io)](https://david-dm.org/jorgecasar/input-password#info=devDependencies)
 
 # &lt;input-password&gt;
 
