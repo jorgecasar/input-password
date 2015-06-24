@@ -1,6 +1,6 @@
 {
   "name": "input-password",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "The input password that you allways want to use in your apps with sign in process.",
   "main": "dist/input-password.html",
   "readmeFilename": "README.md",
