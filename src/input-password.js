@@ -1,43 +1,58 @@
 (function() {
 	var isReady = false;
-	Polymer('input-password', {
-		publish: {
+	return Polymer({
+		is: 'input-password',
+		properties: {
 			/**
-			 * Placeholder text that hints to the user what can be entered in
-			 * the input.
+			 * Placeholder text that hints to the user
+			 * what can be entered in the input.
 			 *
 			 * @attribute placeholder
 			 * @type string
 			 * @default ''
 			 */
-			placeholder: '',
+			placeholder: {
+				type: String,
+				value: ''
+			},
 			/**
-			 * If true, this input cannot be focused and the user cannot change
-			 * its value.
+			 * If true, this input cannot be focused
+			 * and the user cannot change its value.
 			 *
 			 * @attribute disabled
 			 * @type boolean
 			 * @default false
 			 */
-			disabled: false,
+			disabled: {
+				type: Boolean,
+				value: false
+			},
 
 			/**
-			 * If true, the user cannot modify the value of the input.
+			 * If true, the user cannot modify
+			 * the value of the input.
 			 *
 			 * @attribute readonly
 			 * @type boolean
 			 * @default false
 			 */
-			readonly: false,
+			readonly: {
+				type: Boolean,
+				value: false
+			},
 
 			/**
-			 * If true, the input is invalid until the value becomes non-null.
+			 * If true, the input is invalid until
+			 * the value becomes non-null.
 			 *
 			 * @attribute required
 			 * @type boolean
 			 * @default false
 			 */
-			required: false,
+			required: {
+				type: Boolean,
+				value: false
+			},
 			/**
 			 * The value of the input.
 			 *
@@ -45,7 +60,10 @@
 			 * @type string
 			 * @default ''
 			 */
-			value: '',
+			value: {
+				type: String,
+				value: ''
+			},
 			/**
 			 * If true, the user can show the password.
 			 *
@@ -53,7 +71,11 @@
 			 * @type boolean
 			 * @default false
 			 */
-			visible: false,
+			visible: {
+				type: Boolean,
+				value: false,
+				observer: '_visibleChanged'
+			},
 			/**
 			 * The button text to show and hide the input value.
 			 *
@@ -61,30 +83,40 @@
 			 * @type string
 			 * @default 'Toggle'
 			 */
-			toggleText: 'Toggle',
+			toggleText: {
+				type: String,
+				value: 'Toggle'
+			},
 			/**
-			 * The css class that will be included when the password is visible.
+			 * This css class will be included
+			 * when the password is visible.
 			 *
 			 * @attribute value
 			 * @type string
 			 * @default 'visible'
 			 */
-			visibleClass: 'visible'
+			visibleClass: {
+				type: String,
+				value: 'visible'
+			}
 		},
+		listeners: {
+			'visibilityButton.tap': 'toggle'
+		},
+
 		/* -- Lifecycle ------------------------------------------------- */
-		ready: function() {
+		attached: function() {
 			// Initialize attributes
 			this.showText = this.getShowText();
 			this.hideText = this.getHideText();
-			this.visibleChanged(null, this.visible);
-			// Bind Events
-			this._bindEvents();
+			this.$.visibilityButton.innerHTML =
+				this.visible?
+				this.showText:
+				this.hideText;
 		},
-		domReady: function(){
-			isReady = true;
-		},
-		visibleChanged: function(oldValue, newValue){
-			this[newValue ? 'showValue' : 'hideValue']();
+		/* -- Observers ------------------------------------------------- */
+		_visibleChanged: function(){
+			this[this.visible ? 'showValue' : 'hideValue']();
 		},
 		/* -- Methods --------------------------------------------------- */
 		getShowText: function(){
@@ -94,34 +126,18 @@
 			return this.toggleText.split('/')[1] || this.showText;
 		},
 		showValue: function() {
-			this.visible = true;
 			this.$.input.type = 'text';
 			this.classList.add(this.visibleClass);
 			this.$.visibilityButton.innerHTML = this.hideText;
-			if(isReady)
-			{
-				this.fire('showValue');
-			}
 		},
 		hideValue: function() {
-			this.visible = false;
 			this.$.input.type = 'password';
 			this.classList.remove(this.visibleClass);
 			this.$.visibilityButton.innerHTML = this.showText;
-			if(isReady)
-			{
-				this.fire('hideValue');
-			}
 		},
+		/* -- Listeners ------------------------------------------------- */
 		toggle: function() {
 			this.visible = !this.visible;
-		},
-		/* -- Events ---------------------------------------------------- */
-		_bindEvents: function() {
-			this.$.visibilityButton.addEventListener('tap', this.toggle.bind(this), false);
 		}
 	});
 })();
-InputPassword = function() {
-	return document.createElement('input-password');
-};

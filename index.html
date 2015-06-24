@@ -27,7 +27,7 @@
 	<link rel="stylesheet" href="demo/demo.css">
 
 	<!-- Importing Web Component's Polyfill -->
-	<script src="bower_components/platform/platform.js"></script>
+	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
 	<!-- Importing Custom Elements -->
 	<link rel="import" href="src/input-password.html">
@@ -45,16 +45,6 @@ allowtransparency="true" frameborder="0" scrolling="0" width="152" height="30"><
 			<iframe src="http://ghbtns.com/github-btn.html?user=jorgecasar&repo=input-password&type=fork&count=true&size=large"
 allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"></iframe>
 		</p>
-		<article>
-			<h1>pwdmeter</h1>
-			<div class="example_content">
-				<div class="example">
-					<input-password pwdmeter></input-password>
-				</div>
-
-				<pre><code>&lt;input-password is="pwdmeter&gt;&lt;/input-password&gt;</code></pre>
-			</div>
-		</article>
 		<article>
 			<h1>Basic</h1>
 			<div class="example_content">
@@ -105,10 +95,10 @@ allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"><
 			<h1>ToggleText</h1>
 			<div class="example_content">
 				<div class="example">
-					<input-password toggleText="Text/Password"></input-password>
+					<input-password toggle-text="Text/Password"></input-password>
 				</div>
 
-				<pre><code>&lt;input-password toggleText="Text/Password"&gt;&lt;/input-password&gt;</code></pre>
+				<pre><code>&lt;input-password toggle-text="Text/Password"&gt;&lt;/input-password&gt;</code></pre>
 			</div>
 		</article>
 
@@ -116,10 +106,10 @@ allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"><
 			<h1>VisibleClass</h1>
 			<div class="example_content">
 				<div class="example" id="exampleToggleClass">
-					<input-password visibleClass="secret"></input-password>
+					<input-password visible-class="secret"></input-password>
 				</div>
 
-				<pre><code>&lt;input-password visibleClass="secret"&gt;&lt;/input-password&gt;</code></pre>
+				<pre><code>&lt;input-password visible-class="secret"&gt;&lt;/input-password&gt;</code></pre>
 			</div>
 		</article>
 	</section>
@@ -211,7 +201,7 @@ document.getElementById('showValue').addEventListener(
 			<div class="example_content">
 				<div class="example">
 					<input-password id="hideValueMethod" toggleText="Show/Hide"></input-password>
-					<button id="hideValue">Show Value</button>
+					<button id="hideValue">Hide Value</button>
 					<script>
 						document.getElementById('hideValue').addEventListener(
 							'click', function(addEventListener){

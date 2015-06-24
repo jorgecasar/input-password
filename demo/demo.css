@@ -61,7 +61,7 @@ pre {
 #exampleToggleClass input-password:after {
 	content: "Visible";
 	position: absolute;
-	bottom: 0.2em;
+	bottom: -1.3em;
 	left: 1.4em;
 	padding:0 0.8em;
 	font-size:0.8em;
@@ -75,29 +75,33 @@ pre {
 	content: "Hidden";
 }
 #verticalDirection {
-	flex-direction: column;
+	display: block;
 	width: 200px;
 }
-#verticalDirection::shadow input {
+#verticalDirection input, #verticalDirection button {
+	width: 100%;
+}
+#verticalDirection input {
 	padding:0.5em;
 	border-radius:4px 4px 0 0;
 }
-#verticalDirection::shadow button {
+#verticalDirection button {
 	border-radius:0 0 4px 4px;
 	margin: -1px 0 0;
 }
 
 #buttonInside {
+	position: relative;
 	display: inline-block;
 	width: 200px;
 }
-#buttonInside::shadow input {
+#buttonInside input {
 	border-radius:4px;
 	z-index: 1;
 	width: 100%;
 	padding-right:2.6em;
 }
-#buttonInside::shadow button {
+#buttonInside button {
 	position:absolute;
 	right: 0.25em;
 	top: 0;
@@ -109,6 +113,6 @@ pre {
 	border:0 none;
 	background:transparent url('./img/invisible.png') no-repeat center;
 }
-#buttonInside.visible::shadow button {
+#buttonInside.visible button {
 	background-image: url('./img/visible.png');
 }
