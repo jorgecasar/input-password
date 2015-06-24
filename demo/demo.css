@@ -59,7 +59,7 @@ pre {
 }
 
 #exampleToggleClass input-password:after {
-	content: "Visible";
+	content: "Hidden";
 	position: absolute;
 	bottom: -1.3em;
 	left: 1.4em;
@@ -72,7 +72,7 @@ pre {
 }
 
 #exampleToggleClass input-password.secret:after {
-	content: "Hidden";
+	content: "Visible";
 }
 #verticalDirection {
 	display: block;

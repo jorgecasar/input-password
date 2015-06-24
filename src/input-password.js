@@ -109,10 +109,7 @@
 			// Initialize attributes
 			this.showText = this.getShowText();
 			this.hideText = this.getHideText();
-			this.$.visibilityButton.innerHTML =
-				this.visible?
-				this.showText:
-				this.hideText;
+			this._visibleChanged();
 		},
 		/* -- Observers ------------------------------------------------- */
 		_visibleChanged: function(){
