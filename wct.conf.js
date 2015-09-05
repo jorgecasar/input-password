@@ -1,5 +1,5 @@
 module.exports = {
-	suites: ['test']
+	suites: ['test'],
 	verbose: true,
 	testTimeout: 5 * 60 * 1000,
 	plugins: {
