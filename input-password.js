@@ -15,12 +15,12 @@
 
 		/**
 		 * Fired when the value of is shown.
-	  	 * @event showValue
+		 * @event showValue
 		 */
 
-		 /**
+		/**
 		 * Fired when the value of is hidden.
-	  	 * @event hideValue
+		 * @event hideValue
 		 */
 
 		properties: {
@@ -144,21 +144,21 @@
 		/**
 		 * Observer for visible property
 		 */
-		_visibleChanged: function(){
+		_visibleChanged: function() {
 			this[this.visible ? 'showValue' : 'hideValue']();
 		},
 
 		/**
 		 * Get the text of the button for show action
 		 */
-		getShowText: function(){
+		getShowText: function() {
 			return this.toggleText.split('/')[0];
 		},
 
 		/**
 		 * Get the text of the button for hide action
 		 */
-		getHideText: function(){
+		getHideText: function() {
 			return this.toggleText.split('/')[1] || this.showText;
 		},
 
