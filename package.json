@@ -5,7 +5,7 @@
   "main": "dist/input-password.html",
   "readmeFilename": "README.md",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp jshint"
   },
   "repository": {
     "type": "git",
@@ -23,13 +23,15 @@
     "password"
   ],
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-connect": "^0.10.0",
-    "grunt-contrib-cssmin": "^0.12.0",
-    "grunt-contrib-htmlmin": "^0.4.0",
-    "grunt-contrib-uglify": "^0.9.0",
-    "grunt-gh-pages": "^0.10.0",
-    "grunt-push-release": "^0.1.1",
-    "grunt-text-replace": "^0.4.0"
+    "browser-sync": "^2.9.1",
+    "gulp": "^3.9.0",
+    "gulp-html-extract": "0.0.1",
+    "gulp-if": "^1.2.5",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jscs-stylish": "^1.1.2",
+    "gulp-jshint": "^1.11.2",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "jshint-stylish": "^2.0.1",
+    "require-dir": "^0.3.0"
   }
 }
