@@ -48,6 +48,8 @@
 				"Promise": true,
 				"suite": true,
 				"test": true,
+				"setup": true,
+				"fixture": true,
 				"WCT": true,
 				"ga": true
 		}

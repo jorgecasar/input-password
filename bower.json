@@ -5,7 +5,7 @@
     "Jorge del Casar <jorge.casar@gmail.com>"
   ],
   "description": "The input password that you allways want to use in your apps with sign in process now is real with Web Components",
-  "main": "dist/input-password.html",
+  "main": "input-password.html",
   "keywords": [
     "polymer",
     "web-components",
@@ -18,22 +18,22 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "app/bower_components",
+    "demo",
     "test",
-    "tests"
+    "tasks",
+    "gulpfile.js"
   ],
   "dependencies": {
     "iron-behaviors": "PolymerElements/iron-behaviors#~1.0.8",
-    "iron-component-page": "PolymerElements/iron-component-page#~1.0.5",
     "iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#~1.0.4",
     "iron-input": "PolymerElements/iron-input#~1.0.6",
-    "paper-badge": "PolymerElements/paper-badge#~1.0.3",
     "paper-input": "PolymerElements/paper-input#~1.0.13",
-    "polymer": "Polymer/polymer#^1.0.0",
-    "prism": "~1.0.1"
+    "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
+  	"prism": "~1.0.1",
+  	"iron-component-page": "PolymerElements/iron-component-page#~1.0.5",
     "test-fixture": "PolymerElements/test-fixture#~1.0.0",
-    "web-component-tester": "~3.3.21"
+    "web-component-tester": "Polymer/web-component-tester#~3.3.21"
   }
 }

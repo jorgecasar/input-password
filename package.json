@@ -5,7 +5,7 @@
   "main": "dist/input-password.html",
   "readmeFilename": "README.md",
   "scripts": {
-    "test": "gulp jshint"
+    "test": "gulp jshint && wct  --expanded"
   },
   "repository": {
     "type": "git",
