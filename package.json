@@ -5,7 +5,8 @@
   "main": "dist/input-password.html",
   "readmeFilename": "README.md",
   "scripts": {
-    "test": "gulp jshint && wct  --expanded"
+    "deps": "npm install -g gulp && npm install -g bower && npm install && bower install",
+    "test": "gulp jshint && wct --plugin sauce"
   },
   "repository": {
     "type": "git",
