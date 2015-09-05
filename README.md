@@ -1,3 +1,5 @@
+[![NPM version](http://img.shields.io/npm/v/input-password.svg?style=flat)](http://npmjs.org/input-password)
+[![NPM downloads](http://img.shields.io/npm/dm/input-password.svg?style=flat)](http://npmjs.org/input-password)
 [![Package Quality](http://npm.packagequality.com/shield/input-password.png)](http://packagequality.com/#?package=input-password)
 [![Build Status](https://secure.travis-ci.org/jorgecasar/input-password.svg?branch=master)](http://travis-ci.org/jorgecasar/input-password)
 [![Dependency Status](https://david-dm.org/jorgecasar/input-password.svg?theme=shields.io)](https://david-dm.org/jorgecasar/input-password)
