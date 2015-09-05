@@ -18,7 +18,7 @@
 	);
 
 	// visible
-	var showHideValue = document.getElementById('visibleInput');
+	var visibleInput = document.getElementById('visibleInput');
 	document.getElementById('showValue').addEventListener(
 		'click', function(){
 			visibleInput.visible = true;
