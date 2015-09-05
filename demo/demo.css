@@ -37,27 +37,6 @@
 	border-width: 0 1px 1px 0;
 }
 
-pre {
-	padding: 0.5em;
-	margin: 0 0 1em;
-	font-size: 1.2em;
-	line-height: 1.5;
-	word-break: break-all;
-	word-wrap: break-word;
-	white-space: pre;
-	white-space: pre-wrap;
-	background-color: #F8F8F8;
-	border: 1px solid #CCC;
-	border-radius:4px;
-	font-family: Monaco, Consolas, "Lucida Console", monospace;
-}
-
-.example + pre {
-	margin-top: -1em;
-	margin-bottom:0;
-	border: 0;
-}
-
 #exampleToggleClass input-password:after {
 	content: "Hidden";
 	position: absolute;

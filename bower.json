@@ -25,6 +25,7 @@
   "dependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#~1.0.5",
     "paper-badge": "PolymerElements/paper-badge#~1.0.3",
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#^1.0.0",
+    "prism": "~1.0.1"
   }
 }
