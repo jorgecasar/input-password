@@ -1,0 +1,98 @@
+/* Code example
+   ========================================================================== */
+* {
+	box-sizing: border-box;
+}
+.center {
+	max-width: 768px;
+	margin: 0 auto;
+	display: block;
+}
+
+
+.example_content {
+	margin-bottom:1em;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	box-shadow: 0 0 10px #CCC;
+}
+.example {
+	position: relative;
+	margin: 0 0 1em;
+	padding: 2em 1em 1em;
+}
+
+.example:after {
+	content: "Example";
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 2px 8px;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #f5f5f5;
+	color: #9da0a4;
+	border-radius: 4px 0 4px 0;
+	border: 1px solid #CCC;
+	border-width: 0 1px 1px 0;
+}
+
+#exampleToggleClass input-password:after {
+	content: "Hidden";
+	position: absolute;
+	display: block;
+	bottom: -1.3em;
+	left: 1.4em;
+	padding:0 0.8em;
+	font-size:0.8em;
+	background-color: #FFF;
+	color: #9da0a4;
+	border:1px solid #CCC;
+	border-top:0;
+}
+
+#exampleToggleClass input-password.secret:after {
+	content: "Visible";
+}
+#verticalDirection {
+	display: block;
+	width: 200px;
+}
+#verticalDirection input, #verticalDirection button {
+	width: 100%;
+}
+#verticalDirection input {
+	padding:0.5em;
+	border-radius:4px 4px 0 0;
+}
+#verticalDirection button {
+	border-radius:0 0 4px 4px;
+	margin: -1px 0 0;
+}
+
+#buttonInside {
+	position: relative;
+	display: inline-block;
+	width: 200px;
+}
+#buttonInside input {
+	border-radius:4px;
+	z-index: 1;
+	width: 100%;
+	padding-right:2.6em;
+}
+#buttonInside button {
+	position:absolute;
+	right: 0.25em;
+	top: 0;
+	display:block;
+	width:2.4em;
+	height:2.4em;
+	padding: 0;
+	text-indent: -9999em;
+	border:0 none;
+	background:transparent url('./img/invisible.png') no-repeat center;
+}
+#buttonInside.visible button {
+	background-image: url('./img/visible.png');
+}

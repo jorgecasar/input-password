@@ -1,0 +1,38 @@
+{
+  "name": "input-password",
+  "version": "1.1.0",
+  "description": "The input password that you allways want to use in your apps with sign in process.",
+  "main": "dist/input-password.html",
+  "readmeFilename": "README.md",
+  "scripts": {
+    "deps": "npm install -g gulp && npm install -g bower && npm install && bower install",
+    "test": "gulp jshint && wct --plugin sauce"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jorgecasar/input-password.git"
+  },
+  "author": "Jorge del Casar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jorgecasar/input-password/issues"
+  },
+  "keywords": [
+    "polymer",
+    "web-components",
+    "input",
+    "password"
+  ],
+  "devDependencies": {
+    "browser-sync": "^2.9.1",
+    "gulp": "^3.9.0",
+    "gulp-html-extract": "0.0.1",
+    "gulp-if": "^1.2.5",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jscs-stylish": "^1.1.2",
+    "gulp-jshint": "^1.11.2",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "jshint-stylish": "^2.0.1",
+    "require-dir": "^0.3.0"
+  }
+}
