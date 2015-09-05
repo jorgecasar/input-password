@@ -1,67 +1,81 @@
 (function() {
-  'use strtic';
-  document.getElementById('getHideText').addEventListener(
-    'click',
-    function(event) {
-      var input = document.getElementById('getHideTextMethod');
-      this.nextElementSibling.innerHTML = input.getHideText();
-    }, false
-  );
+	'use strtic';
 
-  var showHideValueMethod = document.getElementById('showValueMethod');
-  document.getElementById('showValue').addEventListener(
-    'click', showHideValueMethod.showValue.bind(showHideValueMethod), false
-  );
-  document.getElementById('hideValue').addEventListener(
-    'click', showHideValueMethod.hideValue.bind(showHideValueMethod), false
-  );
-  document.getElementById('toggleVisibility').addEventListener(
-    'click', showHideValueMethod.toggle.bind(showHideValueMethod), false
-  );
+	// showText & hideText
+	var showHideText = document.getElementById('showHideText');
+	document.getElementById('getShowText').addEventListener(
+		'click',
+		function(event) {
+			this.nextElementSibling.innerHTML = showHideText.showText;
+		}, false
+	);
 
-  document.getElementById('getShowText').addEventListener(
-    'click',
-    function(event) {
-      var input = document.getElementById('getShowTextMethod');
-      this.nextElementSibling.innerHTML = input.getShowText();
-    }, false
-  );
+	document.getElementById('getHideText').addEventListener(
+		'click',
+		function(event) {
+			this.nextElementSibling.innerHTML = showHideText.hideText;
+		}, false
+	);
 
-  document.getElementById('toggleVisibility').addEventListener(
-    'click',
-    function(event) {
-      document.getElementById('toggleMethod').toggle();
-    }, false
-  );
+	// visible
+	var showHideValue = document.getElementById('visibleInput');
+	document.getElementById('showValue').addEventListener(
+		'click', function(){
+			visibleInput.visible = true;
+		}, false
+	);
+	document.getElementById('hideValue').addEventListener(
+		'click', function(){
+			visibleInput.visible = false;
+		}, false
+	);
 
-  var showedTimes = 0;
-  document.getElementById('onShowEvent').addEventListener(
-    'showValue',
-    function() {
-      document.getElementById('showedBadge').label = ++showedTimes;
-    }, false);
+	// Toggle demo
+	var toggleInput = document.getElementById('toggleInput');
+	document.getElementById('toggleVisibility').addEventListener(
+		'click',
+		function(event) {
+			toggleInput.toggle();
+		}, false
+	);
 
-  var hiddenTimes = 0;
-  document.getElementById('onHideEvent').addEventListener(
-    'hideValue',
-    function() {
-      document.getElementById('hiddenBadge').label = ++hiddenTimes;
-    }, false);
+	/**********/
+	/* Events */
+	/**********/
+	// ShowValue
+	var visibilityEvents = document.getElementById('visibilityEvents');
+	var showedTimes = document.getElementById('showedTimes');
+	var hiddenTimes = document.getElementById('hiddenTimes');
+	var nShowedTimes = 0;
+	var nHiddenTimes = 0;
+	showedTimes.innerHTML = nShowedTimes;
+	hiddenTimes.innerHTML = nHiddenTimes;
+	visibilityEvents.addEventListener(
+		 'showValue', function(){
+				showedTimes.innerHTML = ++nShowedTimes;
+		 }, false
+	);
+	visibilityEvents.addEventListener(
+		 'hideValue', function(){
+				hiddenTimes.innerHTML = ++nHiddenTimes;
+		 }, false
+	);
 
-  var inputEvents = [
-    // Mouse events
-    'mousedown', 'mouseup', 'click', 'mouseover', 'mouseout',
-    // Keyboard events
-    'keydown', 'keypress', 'keyup',
-    // Touch events
-    'touchstart', 'touchend', 'touchmove',
-    // Focus events
-    'focus', 'blur',
-  ];
-  var inputPassword = document.getElementById('defaultEvents');
-  for (var i = inputEvents.length - 1; i >= 0; i--) {
-    inputPassword.addEventListener(inputEvents[i], function(event) {
-      console.log(event.target.nodeName + ' received ' + event.type);
-    }, false);
-  }
+	// DefaultEvents
+	var inputEvents = [
+		// Mouse events
+		'mousedown', 'mouseup', 'click', 'mouseover', 'mouseout',
+		// Keyboard events
+		'keydown', 'keypress', 'keyup',
+		// Touch events
+		'touchstart', 'touchend', 'touchmove',
+		// Focus events
+		'focus', 'blur',
+	];
+	var inputPassword = document.getElementById('defaultEvents');
+	for (var i = inputEvents.length - 1; i >= 0; i--) {
+		inputPassword.addEventListener(inputEvents[i], function(event) {
+			console.log(event.target.nodeName + ' received ' + event.type);
+		}, false);
+	}
 })();

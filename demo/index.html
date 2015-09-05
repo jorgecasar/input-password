@@ -34,75 +34,97 @@
 	<link rel="import" href="../input-password.html">
 
 	<link rel="import" href="../../paper-button/paper-button.html">
-	<link rel="import" href="../../paper-badge/paper-badge.html">
-	<link rel="import" href="../../paper-styles/color.html">
-
-	<style is="custom-style">
-	paper-badge {
-		--paper-badge-background: var(--paper-amber-300);
-	}
-	</style>
 </head>
 <body>
 
 	<section class="center">
-		<h1>&lt;input-password&gt;</h1>
-		<p>The input password that you allways want to use in your apps with sign in process now is real with Web Components</p>
-
 		<p class="gh-btns pure-hidden-phone">
 			<iframe src="http://ghbtns.com/github-btn.html?user=jorgecasar&amp;repo=input-password&amp;type=watch&amp;count=true&amp;size=large"
 allowtransparency="true" frameborder="0" scrolling="0" width="152" height="30"></iframe>
 			<iframe src="http://ghbtns.com/github-btn.html?user=jorgecasar&amp;repo=input-password&amp;type=fork&amp;count=true&amp;size=large"
 allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"></iframe>
 		</p>
+		<h1>&lt;input-password&gt;</h1>
+		<p>The input password that you allways want to use in your apps with sign in process now is real with Web Components</p>
+		<ul>
+			<li><a href="#basic">Basic</a></li>
+			<li><a href="#options">Options</a>
+				<ul>
+					<li><a href="#visible">Visible</a></li>
+					<li><a href="#toggleText">ToggleText</a></li>
+					<li><a href="#visibleClass">VisibleClass</a></li>
+					<li><a href="#showText-hideText">showText & hideText</a></li>
+				</ul>
+			</li>
+			<li><a href="#methods">Methods</a>
+				<ul>
+					<li><a href="#toggle">Toggle</a></li>
+				</ul>
+			</li>
+			<li><a href="#events">Events</a>
+				<ul>
+					<li><a href="#showValue-hideValue">ShowValue & HideValue</a></li>
+					<li><a href="#default-events">Default events</a></li>
+				</ul>
+			</li>
+			<li><a href="#custom-style">Custom style</a>
+				<ul>
+					<li><a href="#vertical-direction">Vertical direction</a></li>
+					<li><a href="#button-inside">Button inside</a></li>
+				</ul>
+			</li>
+		</ul>
 		<article>
-			<h1>Basic</h1>
+			<h1 id="basic">Basic</h1>
 			<div class="example_content">
 				<div class="example">
-					<input-password></input-password>
+					<input-password name="password" value="password"></input-password>
 				</div>
 
-				<pre><code class="language-markup">&lt;input-password&gt;&lt;/input-password&gt;</code></pre>
+				<pre><code class="language-markup">&lt;input-password name="password" value="password"&gt;&lt;/input-password&gt;</code></pre>
 			</div>
 		</article>
 	</section>
 	<section class="center">
-		<h2>Options</h2>
+		<h1 id="options">Options</h1>
 		<article>
-			<h1>Name</h1>
+			<h1 id="visible">Visible</h1>
 			<div class="example_content">
 				<div class="example">
-					<input-password name="password"></input-password>
+					<p>
+						<input-password visible value="password" id="visibleInput"></input-password>
+					</p>
+					<p>
+						<paper-button raised id="showValue">Show value</paper-button>
+						<paper-button raised id="hideValue">Hide Value</paper-button>
+					</p>
 				</div>
 
-				<pre><code class="language-markup">&lt;input-password name="password"&gt;&lt;/input-password&gt;</code></pre>
+				<pre><code class="language-markup">&lt;input-password
+	visible
+	value="password"
+	id="visibleInput"&gt;
+&lt;/input-password&gt;</code></pre>
+				<pre><code class="language-javascript">var visibleInput = document.getElementById('visibleInput');
+document.getElementById('showValue').addEventListener(
+	'click',
+	function(){
+		visibleInput.visible = true;
+	},
+	false
+);
+document.getElementById('hideValue').addEventListener(
+	'click',
+	function(){
+		showHideValue.visible = false;
+	},
+	false
+);</code></pre>
 			</div>
 		</article>
 
 		<article>
-			<h1>Value</h1>
-			<div class="example_content">
-				<div class="example">
-					<input-password value="password"></input-password>
-				</div>
-
-				<pre><code class="language-markup">&lt;input-password value="password"&gt;&lt;/input-password&gt;</code></pre>
-			</div>
-		</article>
-
-		<article>
-			<h1>Visible</h1>
-			<div class="example_content">
-				<div class="example">
-					<input-password visible></input-password>
-				</div>
-
-				<pre><code class="language-markup">&lt;input-password visible&gt;&lt;/input-password&gt;</code></pre>
-			</div>
-		</article>
-
-		<article>
-			<h1>ToggleText</h1>
+			<h1 id="toggleText">ToggleText</h1>
 			<div class="example_content">
 				<div class="example">
 					<input-password toggle-text="Show/Hide"></input-password>
@@ -113,152 +135,136 @@ allowtransparency="true" frameborder="0" scrolling="0" width="156" height="30"><
 		</article>
 
 		<article>
-			<h1>VisibleClass</h1>
+			<h1 id="visibleClass">VisibleClass</h1>
 			<div class="example_content">
 				<div class="example" id="exampleToggleClass">
-					<input-password visible-class="secret"></input-password>
+					<p>
+						<input-password visible-class="secret"></input-password>
+					</p>
 				</div>
 
 				<pre><code class="language-markup">&lt;input-password visible-class="secret"&gt;&lt;/input-password&gt;</code></pre>
+				<pre><code class="language-css">
+#exampleToggleClass input-password:after {
+	content: "Hidden";
+	position: absolute;
+	display: block;
+	bottom: -1.3em;
+	left: 1.4em;
+	padding:0 0.8em;
+	font-size:0.8em;
+	background-color: #FFF;
+	color: #9da0a4;
+	border:1px solid #CCC;
+	border-top:0;
+}
+
+#exampleToggleClass input-password.secret:after {
+	content: "Visible";
+}</code></pre>
 			</div>
 		</article>
-	</section>
-	<section class="center">
-		<h2>Methods</h2>
 		<article>
-			<h1>getShowText</h1>
+			<h1 id="showText-hideText">showText &amp; hideText</h1>
 			<div class="example_content">
 				<div class="example">
 					<p>
-						<input-password id="getShowTextMethod" toggle-text="Show/Hide"></input-password>
+						<input-password id="showHideText" toggle-text="Show/Hide"></input-password>
 					</p>
 					<p>
 						<paper-button raised id="getShowText">Get Show Text</paper-button>
 						Show text: <paper-item></paper-item>
-					</p>
-				</div>
-
-				<pre><code class="language-markup">&lt;input-password id="getShowTextMethod" toggleText="Show/Hide"&gt;
-&lt;/input-password&gt;
-&lt;button id="getShowText"&gt;
-	Toggle Password
-&lt;/button&gt;</code></pre>
-<pre><code class="language-javascript">
-document.getElementById('getShowText').addEventListener(
-  'click', function(addEventListener){
-     var input = document.getElementById('getShowTextMethod');
-     this.nextElementSibling.innerHTML = input.getShowText();
-  }, false
-);</code></pre>
-			</div>
-		</article>
-		<article>
-			<h1>getHideText</h1>
-			<div class="example_content">
-				<div class="example">
-					<p>
-						<input-password id="getHideTextMethod" toggle-text="Show/Hide"></input-password>
 					</p>
 					<p>
 						<paper-button raised id="getHideText">Get Hide Text</paper-button>
 						Hide text: <paper-item></paper-item>
 					</p>
 				</div>
-				<pre><code class="language-markup">&lt;input-password id="getHideTextMethod" toggleText="Show/Hide"&gt;
+
+				<pre><code class="language-markup">&lt;input-password id="showHideText" toggleText="Show/Hide"&gt;
 &lt;/input-password&gt;
-&lt;paper-button raised id="getHideText"&gt;Get Hide Text&lt;/paper-button&gt;
-Hide text: &lt;paper-item&gt;&lt;/paper-item&gt;</code></pre>
+&lt;button id="showText"&gt;
+	Toggle Password
+&lt;/button&gt;</code></pre>
 <pre><code class="language-javascript">
+var showHideText = document.getElementById('showHideText');
+document.getElementById('getShowText').addEventListener(
+	'click', function(addEventListener){
+		 this.nextElementSibling.innerHTML = showHideText.showText;
+	}, false
+);
 document.getElementById('getHideText').addEventListener(
-  'click', function(addEventListener){
-     var input = document.getElementById('getHideTextMethod')
-	  this.nextElementSibling.innerHTML = input.getHideText();
-  }, false
+	'click', function(addEventListener){
+		this.nextElementSibling.innerHTML = showHideText.hideText;
+	}, false
 );</code></pre>
 			</div>
 		</article>
+	</section>
+	<section class="center">
+		<h1 id="methods">Methods</h1>
 		<article>
-			<h1>show, hide and toggle value visibility</h1>
+			<h1 id="toggle">Toggle</h1>
 			<div class="example_content">
 				<div class="example">
-					<input-password id="showValueMethod" value="password" toggleText="Show/Hide"></input-password>
+					<input-password id="toggleInput" value="password" toggleText="Show/Hide"></input-password>
 					<p>
-						<paper-button raised id="showValue">Show value</paper-button>
-						<paper-button raised id="hideValue">Hide Value</paper-button>
 						<paper-button raised id="toggleVisibility">Toggle Visibility</paper-button>
 					</p>
 				</div>
 
-				<pre><code class="language-markup">&lt;input-password id="showHideValueMethod" value="password" toggleText="Show/Hide"&gt;&lt;/input-password&gt;
+				<pre><code class="language-markup">&lt;input-password id="toggleInput" value="password" toggleText="Show/Hide"&gt;&lt;/input-password&gt;
 &lt;button id="showValue"&gt;Toggle Password&lt;/button&gt;</code></pre>
 <pre><code class="language-javascript">
-var showHideValueMethod = document.getElementById('showHideValueMethod');
-document.getElementById('showValue').addEventListener(
-	'click',
-	showHideValueMethod.showValue.bind(showHideValueMethod),
-	false
-);
-document.getElementById('hideValue').addEventListener(
- 'click',
- showHideValueMethod.hideValue.bind(showHideValueMethod),
- false
-);
+var toggleInput = document.getElementById('toggle');
 document.getElementById('toggleVisibility').addEventListener(
  'click',
- showHideValueMethod.toggle.bind(showHideValueMethod),
+ toggleInput.toggle.bind(toggleInput),
  false
 );</code></pre>
 			</div>
 		</article>
 	</section>
 	<section class="center">
-		<h2>Events</h2>
+		<h1 id="events">Events</h1>
 		<article>
-			<h1>ShowValue</h1>
+			<h1 id="showValue-hideValue">ShowValue &amp; HideValue</h1>
 			<div class="example_content">
 				<div class="example">
 					<p>
-						<span>
-							<input-password value="password" toggle-text="Show/Hide" id="onShowEvent"></input-password>
-							<paper-badge id="showedBadge" label="0"></paper-badge>
-						</span>
+						<input-password value="password" toggle-text="Show/Hide" id="visibilityEvents"></input-password>
+					</p>
+					<p>
+						Visible: <span id="showedTimes"></span>
+					</p>
+					<p>
+						Hidden: <span id="hiddenTimes"></span>
 					</p>
 				</div>
 
 				<pre><code class="language-markup">&lt;input-password id="onShowEvent"&gt;&lt;/input-password&gt;</code></pre>
 <pre><code class="language-javascript">
-document.getElementById('onShowEvent').addEventListener(
-   'showValue', function(){
-      document.getElementById('showedBadge').label = ++times;
-   }, false
+var visibilityEvents = document.getElementById('visibilityEvents');
+var showedTimes = document.getElementById('showedTimes');
+var hiddenTimes = document.getElementById('hiddenTimes');
+var nShowedTimes = 0;
+var nHiddenTimes = 0;
+showedTimes.innerHTML = nShowedTimes;
+hiddenTimes.innerHTML = nHiddenTimes;
+visibilityEvents.addEventListener(
+	 'showValue', function(){
+			showedTimes.innerHTML = ++nShowedTimes;
+	 }, false
+);
+visibilityEvents.addEventListener(
+	 'hideValue', function(){
+			hiddenTimes.innerHTML = ++nHiddenTimes;
+	 }, false
 );</code></pre>
 			</div>
 		</article>
-
 		<article>
-			<h1>HideValue</h1>
-			<div class="example_content">
-				<div class="example">
-					<p>
-						<span>
-							<input-password value="password" visible toggle-text="Show/Hide" id="onHideEvent"></input-password>
-							<paper-badge id="hiddenBadge" label="0"></paper-badge>
-						</span>
-					</p>
-				</div>
-
-				<pre><code class="language-markup">&lt;input-password id="onHideEvent"&gt;&lt;/input-password&gt;</code></pre>
-<pre><code class="language-javascript">
-document.getElementById('onHideEvent').addEventListener(
-   'hideValue', function(){
-      document.getElementById('hiddenBadge').label = ++times;
-   }, false
-);</code></pre>
-			</div>
-		</article>
-
-		<article>
-			<h1>Default events</h1>
+			<h1 id="default-events">Default events</h1>
 			<div class="example_content">
 				<div class="example">
 					<p>
@@ -269,29 +275,29 @@ document.getElementById('onHideEvent').addEventListener(
 				<pre><code class="language-markup">&lt;input-password id="defaultEvents"&gt;&lt;/input-password&gt;</code></pre>
 <pre><code class="language-javascript">
 var inputEvents = [
-   // Mouse events
-   'mousedown', 'mouseup', 'click', 'mouseover', 'mouseout',
-   // Keyboard events
-   'keydown', 'keypress', 'keyup',
-   // Touch events
-   'touchstart', 'touchend', 'touchmove',
-   // Focus events
-   'focus', 'blur',
+	 // Mouse events
+	 'mousedown', 'mouseup', 'click', 'mouseover', 'mouseout',
+	 // Keyboard events
+	 'keydown', 'keypress', 'keyup',
+	 // Touch events
+	 'touchstart', 'touchend', 'touchmove',
+	 // Focus events
+	 'focus', 'blur',
 ];
 var inputPassword = document.getElementById('defaultEvents');
 for(var i = inputEvents.length-1; i >= 0; i--)
 {
-   inputPassword.addEventListener(inputEvents[i], function(event){
-      console.log( event.target + ' received ' + event.type);
-   }, false);
+	 inputPassword.addEventListener(inputEvents[i], function(event){
+			console.log( event.target + ' received ' + event.type);
+	 }, false);
 }</code></pre>
 			</div>
 		</article>
 	</section>
 	<section class="center">
-		<h2>Custom style</h2>
+		<h1 id="custom-styles">Custom style</h1>
 		<article>
-			<h1>input-pasword vertical direction</h1>
+			<h1 id="vertical-direction">Vertical direction</h1>
 			<div class="example_content">
 				<style>
 				#verticalDirection {
@@ -333,7 +339,7 @@ for(var i = inputEvents.length-1; i >= 0; i--)
 			</div>
 		</article>
 		<article>
-			<h1>input-pasword button inside</h1>
+			<h1 id="button-inside">Button inside</h1>
 			<div class="example_content">
 				<div class="example">
 					<input-password id="buttonInside"></input-password>
