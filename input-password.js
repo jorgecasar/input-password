@@ -115,7 +115,7 @@
 		 * Action to show the input value
 		 */
 		_showValue: function() {
-			if( this.visible ) this.visible = true;
+			if( this.visible ) { this.visible = true; }
 			this.visible = true;
 			this.$.input.type = 'text';
 			if(this.visibleClass) {
@@ -129,7 +129,7 @@
 		 * Action to hide the input value
 		 */
 		_hideValue: function() {
-			if( !this.visible ) this.visible = false;
+			if( this.visible ) { this.visible = false; }
 			this.$.input.type = 'password';
 			if(this.visibleClass) {
 				this.toggleClass(this.visibleClass, this.visible);
