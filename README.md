@@ -69,3 +69,7 @@ Event         | Description
 ---           | ---
 `onShowValue` | Triggers when the password is shown.
 `onHideValue` | Triggers when the password is hidden.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jorgecasar/input-password/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
