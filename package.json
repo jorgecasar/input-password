@@ -27,7 +27,7 @@
     "browser-sync": "^2.9.1",
     "gulp": "^3.9.0",
     "gulp-html-extract": "0.0.1",
-    "gulp-if": "^1.2.5",
+    "gulp-if": "^3.0.0",
     "gulp-jscs": "^2.0.0",
     "gulp-jscs-stylish": "^1.1.2",
     "gulp-jshint": "^1.11.2",
