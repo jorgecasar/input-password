@@ -31,7 +31,7 @@
     "gulp-jscs": "^2.0.0",
     "gulp-jscs-stylish": "^1.1.2",
     "gulp-jshint": "^1.11.2",
-    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-load-plugins": "^2.0.2",
     "jshint-stylish": "^2.0.1",
     "require-dir": "^0.3.0"
   }
